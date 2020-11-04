@@ -1,0 +1,33 @@
+// #sendmessage,
+// #senderror {
+//   display: none;
+// }
+
+// #senderror span {
+//   font-weight: bold;
+// }
+
+ol{
+  &.breadcrumb {
+    background-color: #f5f5f5 !important;
+    padding: .75rem 0 0;
+    margin-bottom: 0;
+    a {
+      color: #0d47a1;
+      &:hover{
+        color: #6c757d;
+      }
+    }  
+  }     
+}
+
+.flash .alert {
+  margin-bottom: 0;
+  a {
+    color: #0d47a1;
+    text-decoration: underline;
+    &:hover {
+      color: #4285F4;
+    }
+  }
+}
