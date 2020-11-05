@@ -43,6 +43,18 @@ class UsersController extends Controller
     public function store(StoreUsersRequest $request)
     {
         $this->crud->store($request);
+
+    //    $user = User::new(
+    //         $request['mame'],
+    //         $request['email'],
+    //         $request['password'],
+    //         $request['role_id'],
+    //         $request['description'],
+    //         $request['avatar']
+    //     );
+
+    //     dd($user);
+
         return redirect()->route($this->path.'.index');
     }
 

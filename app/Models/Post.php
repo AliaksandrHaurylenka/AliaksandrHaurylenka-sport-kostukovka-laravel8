@@ -512,32 +512,7 @@ class Post extends Model
         return self::where('status', 1)->where('is_featured', 1)->orderBy('id', 'desc')->take($count)->get();
     }
 
-    //============ АРХИВ ПОСТОВ ==========//
-
-    /**
-     *
-     * @param undefined $query
-     * @param undefined $filters
-     *
-     * @return
-     */
-    public function scopeFilter($query, $filters)
-    {
-        /*if ($month = $filters['month']) {
-            $query->whereMonth('date', \Carbon\Carbon::parse($month)->month);
-        }
-        if ($year = $filters['year']) {
-            //$query->whereYear('created_at', $year);
-            $query->whereYear('date', $year);
-        }*/
-    }
-
-
-    /**
-     *
-     *
-     * @return
-     */
+    //============ АРХИВ ПОСТОВ ==========// 
     public static function archivesYears()
     {
         return static::selectRaw('year(date) as year, count(*) as number')
@@ -552,19 +527,13 @@ class Post extends Model
      * @param $year
      * @return
      */
-//    public static function archivesMonthYear()
+
     public static function archivesMonthYear($year)
     {
-//        dd($year);
         return static::whereYear('date', $year)
             ->selectRaw('year(date) year, month(date) as month, monthname(date) as monthRU, count(*) as number')
             ->groupBy('year', 'month', 'monthRU')
             ->get();
-
-        /*return static::selectRaw('year(date) year, month(date) as month, monthname(date) as monthRU, count(*) as number')
-            ->groupBy('year', 'month', 'monthRU')
-            //->orderByRaw('min(date)')
-            ->get();*/
     }
 
     public function getMonthRUAttribute($month)
@@ -607,7 +576,6 @@ class Post extends Model
     public function related($quantity)
     {
         return self::all()->except($this->id)->reverse()->take($quantity);
-        // return self::where('status', Post::IS_PUBLIC)->latest()->take($quantity)->get();
     }
 
 
@@ -615,7 +583,6 @@ class Post extends Model
     public function hasPrevious()
     {
         return self::where('id', '<', $this->id)->max('id');
-//       return self::where('date', '<', $this->date)->max('date');
     }
 
     public function getPrevious()
@@ -627,7 +594,6 @@ class Post extends Model
     public function hasNext()
     {
         return self::where('id', '>', $this->id)->min('id');
-//       return self::where('date', '>', $this->date)->min('date');
     }
 
     public function getNext()
@@ -639,5 +605,33 @@ class Post extends Model
 
 
 //============= END FRONTEND ============================================
+
+
+
+// ДЛЯ ТЕСТОВ ==========================================
+
+    // Регистрация подписчиков
+    public static function new_post(string $title, 
+                                    string $slug, 
+                                    string $content, 
+                                    string $image, 
+                                    string $date                                 
+                                    ): self
+    {
+        return static::create([
+            'title' => $title,
+            'slug' => $slug,
+            'content' => $content,
+            'image' => $image,
+            'date' => $date,
+            // 'section_id' => $section_id,
+            // 'user_id' => $user_id,
+            // 'status' => $status,
+            // 'views' => $views,
+            // 'is_featured' => $is_featured
+            // 'email' => $email,
+            // 'token' => Str::uuid(),
+        ]);
+    }
 
 }

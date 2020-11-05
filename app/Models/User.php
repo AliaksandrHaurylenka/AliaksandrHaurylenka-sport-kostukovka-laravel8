@@ -213,7 +213,8 @@ class User extends Authenticatable
             'email' => $email,
             'password' => bcrypt(Str::random()),
             'role_id' => $role_id,
-            'description' => $description
+            'description' => $description,
+            // 'avatar' => $avatar
         ]);
     }
 }
