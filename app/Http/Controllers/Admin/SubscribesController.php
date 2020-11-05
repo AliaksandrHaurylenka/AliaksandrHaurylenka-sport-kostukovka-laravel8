@@ -6,6 +6,7 @@ use App\Models\Subscribe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubscribesRequest;
+use App\UseCases\Auth\RegisterService;
 
 use App\Http\Controllers\Admin\Obj\CRUD;
 
@@ -15,10 +16,12 @@ class SubscribesController extends Controller
     private $path = 'admin.subscribes';
     private $singleTableName = 'subscribe';
     private $model = Subscribe::class;
+    private $verify;
 
-    public function __construct()
+    public function __construct(RegisterService $verify)
     {
         $this->crud = new CRUD($this->singleTableName, $this->model);
+        $this->verify = $verify;
     }
 
 
@@ -82,5 +85,14 @@ class SubscribesController extends Controller
     {
         $this->crud->perma_del($id);
         return redirect()->route($this->path.'.index');
+    }
+
+
+    public function verify(Subscribe $subscribe)
+    {
+        // dd($subscribe);
+        $this->verify->verify($subscribe->id);
+
+        return redirect()->route('admin.subscribes.index');
     }
 }

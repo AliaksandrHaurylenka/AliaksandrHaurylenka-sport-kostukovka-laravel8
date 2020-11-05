@@ -186,10 +186,11 @@ Route::group(
 
 
         Route::resource('subscribes', AdminSubscribes::class);
-        Route::post('subscribes_mass_destroy', [AdminSubscribes::class, 'massDestroy'])->name
-        ('subscribes.mass_destroy');
+        Route::post('subscribes_mass_destroy', [AdminSubscribes::class, 'massDestroy'])->name('subscribes.mass_destroy');
         Route::post('subscribes_restore/{id}', [AdminSubscribes::class, 'restore'])->name('subscribes.restore');
         Route::delete('subscribes_perma_del/{id}', [AdminSubscribes::class, 'perma_del'])->name('subscribes.perma_del');
+        Route::post('subscribes/{subscribe}/verify', [AdminSubscribes::class, 'verify'])->name('subscribes.verify');
+
 
         Route::resource('gomelglasses', GomelglassesController::class);
         Route::post('gomelglasses_mass_destroy', [GomelglassesController::class, 'massDestroy'])->name('gomelglasses.mass_destroy');

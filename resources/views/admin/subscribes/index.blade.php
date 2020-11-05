@@ -77,17 +77,24 @@
                                 @endcan
                                 </td>
                                 @else
-                                <td>                                    @can('subscribe_edit')
-                                    <a href="{{ route('admin.subscribes.edit',[$subscribe->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                <td>
+                                    @if ($subscribe->token)
+                                        <form method="POST" action="{{ route('admin.subscribes.verify', $subscribe) }}" class="mr-1">
+                                            @csrf
+                                            <button class="btn btn-success">Подписать</button>
+                                        </form>
+                                    @endif
+                                    @can('subscribe_edit')
+                                        <a href="{{ route('admin.subscribes.edit',[$subscribe->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('subscribe_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                        'route' => ['admin.subscribes.destroy', $subscribe->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
+                                        {!! Form::open(array(
+                                            'style' => 'display: inline-block;',
+                                            'method' => 'DELETE',
+                                            'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                            'route' => ['admin.subscribes.destroy', $subscribe->id])) !!}
+                                        {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                        {!! Form::close() !!}
                                     @endcan
                                 </td>
                                 @endif
