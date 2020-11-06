@@ -79,9 +79,9 @@
                                 @else
                                 <td>
                                     @if ($subscribe->token)
-                                        <form method="POST" action="{{ route('admin.subscribes.verify', $subscribe) }}" class="mr-1">
+                                        <form method="POST" action="{{ route('admin.subscribes.verify', $subscribe) }}" style="margin-bottom: 1rem;">
                                             @csrf
-                                            <button class="btn btn-success">Подписать</button>
+                                            <button class="btn btn-xs btn-success">Подписать</button>
                                         </form>
                                     @endif
                                     @can('subscribe_edit')
