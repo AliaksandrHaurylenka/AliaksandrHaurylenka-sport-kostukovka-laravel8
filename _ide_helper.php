@@ -14355,6 +14355,17 @@
      
 }
 
+    namespace Jenssegers\Date { 
+            /**
+     * 
+     *
+     */ 
+        class Date {
+         
+    }
+     
+}
+
         namespace Barryvdh\Debugbar { 
             /**
      * 
@@ -15410,17 +15421,6 @@
                         /** @var \Intervention\Image\ImageManager $instance */
                         return $instance->cache($callback, $lifetime, $returnObj);
         }
-         
-    }
-     
-}
-
-    namespace Jenssegers\Date { 
-            /**
-     * 
-     *
-     */ 
-        class Date {
          
     }
      
@@ -16825,6 +16825,7 @@ namespace  {
             class Cookie extends \Illuminate\Support\Facades\Cookie {}
             class Crypt extends \Illuminate\Support\Facades\Crypt {}
             class DB extends \Illuminate\Support\Facades\DB {}
+            class Date extends \Jenssegers\Date\Date {}
             class Eloquent extends \Illuminate\Database\Eloquent\Model {             
                 /**
              * Create and return an un-saved model instance.
@@ -19816,7 +19817,6 @@ namespace  {
             class Breadcrumbs extends \DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Image extends \Intervention\Image\Facades\Image {}
-            class Date extends \Jenssegers\Date\Date {}
             class Flash extends \Laracasts\Flash\Flash {}
             class Form extends \Collective\Html\FormFacade {}
             class Html extends \Collective\Html\HtmlFacade {}
