@@ -42,7 +42,7 @@
         height: 60vh;
     }
 
-    @media (max-width: 740px) {    	
+    @media (max-width: 740px) {
 
     	.carousel {
             height: 100%;
@@ -58,7 +58,7 @@
 
     	.carousel {
             height: 100%;
-        }    	
+        }
 
         .main-carousel {
             height: 100vh;
