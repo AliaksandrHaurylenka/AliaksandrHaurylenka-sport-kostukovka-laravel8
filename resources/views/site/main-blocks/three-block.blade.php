@@ -4,7 +4,7 @@
 	<div class="gallery">
         @foreach($gallery as $img)
         <div class="mb-3 pics animation all 1">
-          <a href="/images/main/{{$img->photo}}" data-gal="prettyPhoto[mainBuilding]">
+          <a href="/images/main/{{$img->photo}}" rel="prettyPhoto[mainBuilding]">
             <img src="/images/main/{{$img->photo}}" class="img-fluid rounded-0" alt="">
           </a>
         </div>

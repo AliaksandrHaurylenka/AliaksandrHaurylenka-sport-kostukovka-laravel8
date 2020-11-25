@@ -35,7 +35,7 @@
                     <div class="gallery">
                       @foreach($ad->getImgGallery('/images/ads/'.$ad->folder) as $img)
                         <div class=" mb-3 pics animation all 1">
-                          <a href="/{{$img}}" data-gal="prettyPhoto[{{$ad->slug}}]">
+                          <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
                             <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                           </a>
                         </div>
@@ -49,7 +49,7 @@
                     <div class="gallery">
                       @foreach($ad->getImgGallery("/images/simple_users/объявления/".$ad->author->name."/".$ad->folder) as $img)
                         <div class=" mb-3 pics animation all 1">
-                          <a href="/{{$img}}" data-gal="prettyPhoto[{{$ad->slug}}]">
+                          <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
                             <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                           </a>
                         </div>
@@ -79,7 +79,7 @@
               <div class="gallery">
                   @foreach($ad->getImgGallery('/images/ads/'.$ad->folder) as $img)
                   <div class=" mb-3 pics animation all 1">
-                    <a href="/{{$img}}" data-gal="prettyPhoto[{{$ad->slug}}]">
+                    <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
                       <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                     </a>
                   </div>
@@ -92,15 +92,15 @@
               <div class="gallery">
                   @foreach($ad->getImgGallery("/images/simple_users/объявления/".$ad->author->name."/".$ad->folder) as $img)
                   <div class=" mb-3 pics animation all 1">
-                    <a href="/{{$img}}" data-gal="prettyPhoto[{{$ad->slug}}]">
+                    <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
                       <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                     </a>
                   </div>
                   @endforeach
               </div>
               @endif
-              
-              
+
+
 
               <p class="mt-3">С уважением <span class="font-weight-bold grey-lighter-hover">{{$ad->author->name}}</span></p>
           @endforeach--}}

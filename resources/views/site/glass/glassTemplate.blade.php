@@ -16,7 +16,7 @@
                         <!-- Card image -->
                         <div class="view overlay">
                             <img class="card-img-top" src="/images/gomelglasses/{{$sport->photo}}" alt="">
-                            <a href="/images/gomelglasses/{{$sport->photo}}" data-gal="prettyPhoto[{{$sport->sport}}]">
+                            <a href="/images/gomelglasses/{{$sport->photo}}" rel="prettyPhoto[{{$sport->sport}}]">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>

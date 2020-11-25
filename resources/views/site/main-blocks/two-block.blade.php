@@ -10,7 +10,7 @@
             <!-- Card image -->
             <div class="view overlay">
               <img class="card-img-top img-fluid" src="/images/sections/{{$section->photo}}" alt="Card image cap">
-              <a href="/images/sections/{{$section->photo}}" data-gal="prettyPhoto[mainSections]">
+              <a href="/images/sections/{{$section->photo}}" rel="prettyPhoto[mainSections]">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>

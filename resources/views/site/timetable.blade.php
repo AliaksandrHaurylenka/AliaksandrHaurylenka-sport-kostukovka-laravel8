@@ -15,10 +15,10 @@
     	@foreach($timetable as $time)
     	<!--Grid row-->
     	<div class="row  wow fadeIn">
-    	 
+
     		<!--Grid column-->
             <div class="col-lg-5 mb-4">
-                <a href="/images/timetable/{{$time->photo}}" data-gal="prettyPhoto[timetable]">
+                <a href="/images/timetable/{{$time->photo}}" rel="prettyPhoto[timetable]">
                     <img src="/images/timetable/{{$time->photo}}" class="img-fluid" alt="">
                 </a>
             </div>
@@ -28,7 +28,7 @@
             <div class="col-lg-6 ml-xl-4 mb-4">
                 <div class="dark-grey-text">
                 	{!!$time->timetable!!}
-                </div>           
+                </div>
             </div>
             <!--Grid column-->
         </div>
@@ -36,7 +36,7 @@
     	<hr class="mb-5">
     	@endforeach
     @endif
-    
+
     @include('site.blocks.block-rtb-1')
 </section>
 @endsection

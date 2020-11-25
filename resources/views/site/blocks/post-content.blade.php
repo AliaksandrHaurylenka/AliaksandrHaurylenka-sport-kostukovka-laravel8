@@ -28,7 +28,7 @@
             <div class="gallery">
                 @foreach($post->getImgGallery("/images/news/$post->folder") as $img)
                     <div class="mb-3 pics animation all 1">
-                        <a href="/{{$img}}" data-gal="prettyPhoto[{{$post->id}}]">
+                        <a href="/{{$img}}" rel="prettyPhoto[{{$post->id}}]">
                             <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                         </a>
                     </div>
@@ -41,7 +41,7 @@
             <div class="gallery">
                 @foreach($post->getImgGallery('/images/simple_users/новости/'.$post->author->name.'/'.$post->folder) as $img)
                     <div class="mb-3 pics animation all 1">
-                        <a href="/{{$img}}" data-gal="prettyPhoto[{{$post->id}}]">
+                        <a href="/{{$img}}" rel="prettyPhoto[{{$post->id}}]">
                             <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
                         </a>
                     </div>

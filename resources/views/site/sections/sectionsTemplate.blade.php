@@ -21,7 +21,7 @@
 			<!-- Featured image -->
 			<div class="view overlay">
 				<img src="/images/coaches/{{ $coach->photo }}" class="img-fluid" alt="">
-				<a href="/images/coaches/{{ $coach->photo }}" data-gal="prettyPhoto[coachs]">
+				<a href="/images/coaches/{{ $coach->photo }}" rel="prettyPhoto[coachs]">
 				<div class="mask rgba-white-slight"></div>
 				</a>
 			</div>
@@ -62,7 +62,7 @@
 						<div class="row">
 							<div class="col-md-4 view overlay">
 								<img src="/images/coaches/{{ $coach->photo }}" class="img-fluid" alt="">
-								<a href="/images/coaches/{{ $coach->photo }}" data-gal="prettyPhoto[archive]">
+								<a href="/images/coaches/{{ $coach->photo }}" rel="prettyPhoto[archive]">
 								<span class="mask rgba-white-slight"></span>
 								</a> 
 							</div>
@@ -95,7 +95,7 @@
 							<div class="row">
 								<div class="col-md-4 view overlay">
 									<img src="/images/prides/{{ $men->photo }}" class="img-fluid" alt="">
-									<a href="/images/prides/{{ $men->photo }}" data-gal="prettyPhoto[prides]">
+									<a href="/images/prides/{{ $men->photo }}" rel="prettyPhoto[prides]">
 									<span class="mask rgba-white-slight"></span>
 									</a>
 									<h6 class="h6-responsive text-center text-uppercase mt-1">{{ $men->name }}</h6>

@@ -82,7 +82,7 @@
                   <div class="row">
                     <div class="col-md-5 view overlay">
                       {!! Html::image(App\Models\Board::PATH.$coach->photo,'',['class'=>'img-fluid']) !!}
-                      <a href="/images/board/{{$coach->photo}}" data-gal="prettyPhoto[board]">
+                      <a href="/images/board/{{$coach->photo}}" rel="prettyPhoto[board]">
                         <div class="mask rgba-white-slight"></div>
                       </a>
                       <h6 class="h6-responsive mb-1 text-center text-uppercase mt-1">{{$coach->name}}</h6>

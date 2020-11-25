@@ -10,7 +10,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
-<link href="/css/prettyPhoto.css" rel="stylesheet">
+<!--<link href="/css/prettyPhoto.css" rel="stylesheet">-->
 <link href="/css/mdb.min.css" rel="stylesheet">
 <link href="/css/flexslider.css" rel="stylesheet">
 

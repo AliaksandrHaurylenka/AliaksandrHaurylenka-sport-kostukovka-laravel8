@@ -1,6 +1,6 @@
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="/js/jquery.prettyPhoto.js"></script>
+
 
 <!-- Bootstrap tooltips -->
 <script src="/js/popper.min.js"></script>
@@ -29,7 +29,7 @@
   window.scroll(...cords.map(cord => localStorage[cord]));
   //Удаляем сразу ключи, чтобы при клике на другие ссылки страница открывалась сверху
   localStorage.removeItem('scrollY');
-  localStorage.removeItem('scrollX'); 
+  localStorage.removeItem('scrollX');
 </script> --}}
 
 
@@ -45,5 +45,9 @@
      });
 
      $(".flash.message").children('.alert').css({"padding-left": "21%", "padding-right": "22%"});
+
+     $("a[rel^='prettyPhoto']").prettyPhoto(
+        theme="facebook"
+     );
  });
  </script>
