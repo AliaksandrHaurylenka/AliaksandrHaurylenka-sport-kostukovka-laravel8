@@ -12,11 +12,6 @@
 <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
 <!--<link href="/css/prettyPhoto.css" rel="stylesheet">-->
 <link href="/css/mdb.min.css" rel="stylesheet">
-<link href="/css/flexslider.css" rel="stylesheet">
-
-<!-- Your custom styles (optional) -->
-<link href="/css/mdb_style.min.css" rel="stylesheet">
-<link href="{{ mix('css/my_style.css', 'build') }}" rel="stylesheet">
 
 <meta name="description" content="@yield('description')">
 <meta name="author" content="Александр Гавриленко">

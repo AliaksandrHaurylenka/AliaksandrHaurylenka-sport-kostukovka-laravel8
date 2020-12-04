@@ -3,13 +3,8 @@
 
 
 <!-- Bootstrap tooltips -->
-<script src="/js/popper.min.js"></script>
 <script src="/js/mdb_pro.min.js"></script>
-<script src="/js/jquery.flexslider.js"></script>
-<script src="/js/jquery.scrollUp.min.js"></script>
 
-<!-- Initializations -->
-<script src="/js/my_jquery.js"></script>
 
 <script>
   // Animations initialization
