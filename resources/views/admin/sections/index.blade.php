@@ -6,7 +6,7 @@
     @can('section_create')
     <p>
         <a href="{{ route('admin.sections.create') }}" class="btn btn-success">@lang('quickadmin.qa_add_new')</a>
-        
+
     </p>
     @endcan
 
@@ -46,81 +46,81 @@
                         @endif
                     </tr>
                 </thead>
-                
-                <tbody>
-                    @if (count($data) > 0)
-                        @foreach ($data as $section)
-                            <tr data-entry-id="{{ $section->id }}">
-                                @can('section_delete')
-                                    @if ( request('show_deleted') != 1 )<td></td>@endif
-                                @endcan
 
-                                <td field-key='title'>{{ $section->title }}</td>
-                                <td field-key='photo_section_menu'>
-                                    <img class="photo" src="{{ asset($section->getImageAdminPanel()['photo_section_menu']) }}"/>
-                                </td>
-                                <td field-key='photo'>
-                                    @if($section->photo)
-                                        <img class="photo" src="{{ asset($section->getImageAdminPanel()['photo']) }}"/>
-                                    @endif
-                                </td>
-                                <td field-key='description_main_page'>{!! $section->description_main_page !!}</td>
-                                <td field-key='photo_sport'>
-                                    @if($section->photo_sport)
-                                        <img class="photo" src="{{ ($section->getImageAdminPanel()['photo_sport']) }}">
-                                    @endif
-                                </td>
-                                <td field-key='description'>{!! $section->description !!}</td>
-                                @if( request('show_deleted') == 1 )
-                                <td>
-                                    @can('section_delete')
-                                                                        {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'POST',
-                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                        'route' => ['admin.sections.restore', $section->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                    {!! Form::close() !!}
-                                @endcan
-                                    @can('section_delete')
-                                                                        {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                        'route' => ['admin.sections.perma_del', $section->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                @endcan
-                                </td>
-                                @else
-                                <td>                                    @can('section_edit')
-                                    <a href="{{ route('admin.sections.edit',[$section->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
-                                    @endcan
-                                    @can('section_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
-                                        'route' => ['admin.sections.destroy', $section->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                    @endcan
-                                </td>
-                                @endif
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="8">@lang('quickadmin.qa_no_entries_in_table')</td>
-                        </tr>
-                    @endif
+                <tbody>
+
+                  @forelse ($data as $section)
+                      <tr data-entry-id="{{ $section->id }}">
+                          @can('section_delete')
+                              @if ( request('show_deleted') != 1 )<td></td>@endif
+                          @endcan
+
+                          <td field-key='title'>{{ $section->title }}</td>
+                          <td field-key='photo_section_menu'>
+                              <img class="photo" src="{{ asset($section->getImageAdminPanel()['photo_section_menu']) }}"/>
+                          </td>
+                          <td field-key='photo'>
+                              @if($section->photo)
+                                  <img class="photo" src="{{ asset($section->getImageAdminPanel()['photo']) }}"/>
+                              @endif
+                          </td>
+                          <td field-key='description_main_page'>{!! $section->description_main_page !!}</td>
+                          <td field-key='photo_sport'>
+                              @if($section->photo_sport)
+                                  <img class="photo" src="{{ ($section->getImageAdminPanel()['photo_sport']) }}">
+                              @endif
+                          </td>
+                          <td field-key='description'>{!! $section->description !!}</td>
+                          @if( request('show_deleted') == 1 )
+                          <td>
+                              @can('section_delete')
+                                                                  {!! Form::open(array(
+                                  'style' => 'display: inline-block;',
+                                  'method' => 'POST',
+                                  'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                  'route' => ['admin.sections.restore', $section->id])) !!}
+                              {!! Form::submit(trans('quickadmin.qa_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                              {!! Form::close() !!}
+                          @endcan
+                              @can('section_delete')
+                                                                  {!! Form::open(array(
+                                  'style' => 'display: inline-block;',
+                                  'method' => 'DELETE',
+                                  'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                  'route' => ['admin.sections.perma_del', $section->id])) !!}
+                              {!! Form::submit(trans('quickadmin.qa_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                              {!! Form::close() !!}
+                          @endcan
+                          </td>
+                          @else
+                          <td>                                    @can('section_edit')
+                              <a href="{{ route('admin.sections.edit',[$section->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                              @endcan
+                              @can('section_delete')
+                                {!! Form::open(array(
+                                  'style' => 'display: inline-block;',
+                                  'method' => 'DELETE',
+                                  'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
+                                  'route' => ['admin.sections.destroy', $section->id])) !!}
+                              {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                              {!! Form::close() !!}
+                              @endcan
+                          </td>
+                          @endif
+                      </tr>
+                  @empty
+                    <tr>
+                        <td colspan="8">@lang('quickadmin.qa_no_entries_in_table')</td>
+                    </tr>
+                  @endforelse
+
                 </tbody>
             </table>
         </div>
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('section_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.sections.mass_destroy') }}'; @endif
