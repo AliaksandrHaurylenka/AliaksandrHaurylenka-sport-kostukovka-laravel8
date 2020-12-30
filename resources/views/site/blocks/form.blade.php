@@ -8,7 +8,7 @@
 			{{ csrf_field() }}
 		<div class="form-row mb-4">
 			<div class="col">
-					<a href="" id="refresh"><img src="{{ Captcha::src('flat') }}" alt="captcha" class="captcha-img btn-form" data-refresh-config="default"></a>
+					<a href="" id="refresh"><img src="{{ Captcha::src('flat') }}" alt="captcha" class="captcha-img" data-refresh-config="default"></a>
 			</div>
 			<div class="col">
 					<input class="form-control {{ $errors->has('captcha') ? ' is-invalid' : '' }}" type="text" placeholder="Код*" name="captcha" required>
@@ -17,6 +17,7 @@
 					@endif
 			</div>
 		</div>
+		{{-- @include('site.blocks.captcha') --}}
 	  <!-- Default input -->
 	  <div class="form-group">
 			<input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Имя*" name="name" value="{{old('name')}}" required>

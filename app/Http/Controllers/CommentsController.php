@@ -12,22 +12,32 @@ class CommentsController extends Controller
 {
     public function store(Request $request)
     {
-        if (Auth::check()) {
-            try {
-                $this->validate($request, [
-                    'message' => 'required',
-                ]);
-            } catch (ValidationException $e) {
-            }
-        } else {
-            try {
-                $this->validate($request, [
-                    'message' => 'required',
-                    'name' => 'required',
-                ]);
-            } catch (ValidationException $e) {
-            }
+        $messages = [
+            'name.required' => 'Поле "Имя" обязательно к заполнению',
+            'message.required' => 'Поле "Комментарий" обязательно к заполнению',
+            'message.max' => 'Количество символов комментария не должно превышать :max',
+            'message.min' => 'Количество символов комментария должно быть не менее :min',
+            'comment_captcha.required' => 'Поле "Код с картинки" обязательно к заполнению',
+            'comment_captcha.captcha' => 'Код с картинки введен неверно',
+            // 'captcha' => 'Код с картинки введен неверно sdfgdfsgdf',
+            // 'comment_captcha' => 'Код с картинки введен неверно',
+        ];
+
+        if (Auth::check()) {            
+            $this->validate($request, [
+                'message' => 'required|max:1000|min:2',
+                'comment_captcha' => 'required|captcha',
+            ], $messages);           
+        } else {           
+            $this->validate($request, [
+                'name' => 'required|max:100|min:2',
+                'message' => 'required|max:1000|min:2',
+                'comment_captcha' => 'required|captcha',
+            ], $messages);            
         }
+        
+
+        dd($request);
 
         $comment = new Comment();
         $post = new Post();

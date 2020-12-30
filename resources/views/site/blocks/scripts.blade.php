@@ -28,7 +28,7 @@
 </script> --}}
 
 
-<script type="text/javascript">
+<script>
 
   // Плавная прокрутка к сообщению при выводе ошибок
   $(document).ready(function(){
@@ -46,3 +46,36 @@
      );
  });
  </script>
+
+
+ {{-- <script>
+    $('#refresh').on('click',function(){
+        var captcha = $('img.captcha-img');
+        var config = captcha.data('refresh-config');
+        $.ajax({
+            method: 'GET',
+            url: '/get_captcha/' + config,
+        }).done(function (response) {
+            captcha.prop('src', response);
+        });
+    });
+</script> --}}
+
+
+{{-- <script>
+
+function refreshCaptcha(){
+      $.ajax({
+        url: "/refereshcapcha",
+        type: 'get',
+        dataType: 'html',
+        success: function(json) {
+          $('.refereshrecapcha').html(json);
+        },
+        error: function(data) {
+          alert('Try Again.');
+        }
+      });
+    }
+
+</script> --}}

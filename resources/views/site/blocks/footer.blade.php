@@ -19,9 +19,13 @@
       {{--/Спортивные секции--}}
 
       {{--Обратная связь--}}
+      {{-- {{ dd($post ?? ''->slug) }} --}}
       @if(url()->full() != route('kontakty'))
         @include('site.blocks.form')
       @endif
+      {{-- @if(url()->full() != route('post.show', $post ?? ''->slug))
+        @include('site.blocks.form')
+      @endif --}}
       {{--/Обратная связь--}}
 
     </div>

@@ -219,7 +219,6 @@ class Ad extends Model
         if ($this->photo != null) {
             return Ad::PATH . $this->photo;
         }
-//        return Ad::PATH . $this->photo;
     }
     
     /**

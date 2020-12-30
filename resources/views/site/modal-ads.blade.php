@@ -26,7 +26,9 @@
             @foreach($ads as $ad)
               <div class="tab-pane fade" id="{{$ad->slug}}">
                   <h2>{{$ad->title}}</h2>
-                  <p><img src="{{$ad->getImage()}}" alt="" class="img-fluid"></p>
+                  @if($ad->photo != null)
+                    <p><img src="{{$ad->getImage()}}" alt="" class="img-fluid"></p>
+                  @endif
                   <p class="font-weight-bold grey-lighter-hover">{{$ad->getDate()}}</p>
                   {!!$ad->content!!}
 

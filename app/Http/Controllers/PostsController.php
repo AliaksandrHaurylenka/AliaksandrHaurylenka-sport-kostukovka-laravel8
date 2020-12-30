@@ -35,6 +35,7 @@ class PostsController extends Controller
     public function post($slug)
     {
         $post = Post::where('status', Post::IS_PUBLIC)->where('slug', $slug)->firstOrFail();
+        //dd(url()->full());
 
         event('postHasViewed', $post);//для подсчета количества просмотров постов. Провайдер EventServiceProvider.php
 

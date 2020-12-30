@@ -20,6 +20,7 @@ class LetterController extends Controller
                 'name.required' => 'Поле "Имя" обязательно к заполнению',
                 'email.required' => 'Поле "E-mail" обязательно к заполнению',
                 'text.required' => 'Поле "Сообщение" обязательно к заполнению',
+                'text' => 'Количество символов сообщения не должно превышать 1000',
                 'captcha.required' => 'Поле "Код с картинки" обязательно к заполнению',
                 'email' => 'Поле :attribute должно быть email адресом',
                 'captcha' => 'Код с картинки введен неверно',
@@ -28,7 +29,7 @@ class LetterController extends Controller
             $this->validate($request, [
                 'email' => 'required|email',
                 'name' => 'required|max:255',
-                'text' => 'required|max:1000',
+                'text' => 'required|max:10',
                 'captcha' => 'required|captcha',
             ], $messages);
 

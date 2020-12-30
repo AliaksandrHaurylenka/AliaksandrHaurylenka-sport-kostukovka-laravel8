@@ -13,7 +13,8 @@
             <div class="col-sm-6">
               <div class="md-form">
                 <img src="{{ Captcha::src('flat') }}" alt="captcha" class="captcha-img" data-refresh-config="default">
-                <a href="" id="refresh" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a>
+                {{-- <a href="" id="refresh" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a> --}}
+                <a href="javascript:void(0)" onclick="refreshCaptcha()" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a>
               </div>
             </div>
 

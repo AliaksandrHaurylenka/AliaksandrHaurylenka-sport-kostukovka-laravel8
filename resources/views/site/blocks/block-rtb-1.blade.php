@@ -1,7 +1,7 @@
 <div class="mb-5">
     <!-- Yandex.RTB R-A-614035-2 -->
     <div id="yandex_rtb_R-A-614035-2"></div>
-    <script type="text/javascript">
+    <script>
         (function(w, d, n, s, t) {
             w[n] = w[n] || [];
             w[n].push(function() {

@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\SubscribesEmail;
 use App\Models\Subscribe;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\SubscribesRequest;
+use App\UseCases\Auth\RegisterService;
 
 class SubscribesController extends Controller
 {
+    private $service;
+
+
+    public function __construct(RegisterService $service)
+    {
+        $this->middleware('guest');
+        $this->service = $service;
+    }
 
     public function subscribe(SubscribesRequest $request)
     {
-		$subscriber = Subscribe::register_subscriber(
-			$request['email']
-		);
-
-        Mail::to($subscriber)->send(new SubscribesEmail($subscriber));
+        $this->service->register($request);
 
         flash('Для подтверждения рассылок, пожалуйста, перейдите в свою почту!')->success()->important();
         return redirect()->back();
