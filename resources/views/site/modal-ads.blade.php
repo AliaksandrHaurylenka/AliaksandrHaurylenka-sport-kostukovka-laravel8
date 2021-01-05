@@ -68,46 +68,6 @@
             @endforeach
 
           </div>
-
-
-          {{--@foreach($ads as $ad)
-              <h2>{{$ad->title}}</h2>
-              <p><img src="{{$ad->getImage()}}" alt="" class="img-fluid"></p>
-              <p class="font-weight-bold grey-lighter-hover">{{$ad->getDate()}}</p>
-              {!!$ad->content!!}
-
-              @if($ad->getImgGallery('/images/ads/'.$ad->folder))
-              <!--Grid row-->
-              <div class="gallery">
-                  @foreach($ad->getImgGallery('/images/ads/'.$ad->folder) as $img)
-                  <div class=" mb-3 pics animation all 1">
-                    <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
-                      <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
-                    </a>
-                  </div>
-                  @endforeach
-              </div>
-              @endif
-
-              @if($ad->getImgGallery("/images/simple_users/объявления/".$ad->author->name."/".$ad->folder))
-              <!--Grid row-->
-              <div class="gallery">
-                  @foreach($ad->getImgGallery("/images/simple_users/объявления/".$ad->author->name."/".$ad->folder) as $img)
-                  <div class=" mb-3 pics animation all 1">
-                    <a href="/{{$img}}" rel="prettyPhoto[{{$ad->slug}}]">
-                      <img src="/{{$img}}" class="img-fluid rounded-0" alt="">
-                    </a>
-                  </div>
-                  @endforeach
-              </div>
-              @endif
-
-
-
-              <p class="mt-3">С уважением <span class="font-weight-bold grey-lighter-hover">{{$ad->author->name}}</span></p>
-          @endforeach--}}
-
-          {{--{{$ads->links()}}--}}
         @endif
       </div>
       <div class="modal-footer">

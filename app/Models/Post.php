@@ -518,6 +518,7 @@ class Post extends Model
         return static::selectRaw('year(date) as year, count(*) as number')
             ->groupBy('year')
             ->latest('year')
+            ->where('status', 1)
             ->get();
     }
 
@@ -533,6 +534,7 @@ class Post extends Model
         return static::whereYear('date', $year)
             ->selectRaw('year(date) year, month(date) as month, monthname(date) as monthRU, count(*) as number')
             ->groupBy('year', 'month', 'monthRU')
+            ->where('status', 1)
             ->get();
     }
 

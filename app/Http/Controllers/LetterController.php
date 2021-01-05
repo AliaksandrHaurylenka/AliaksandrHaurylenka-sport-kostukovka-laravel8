@@ -29,7 +29,7 @@ class LetterController extends Controller
             $this->validate($request, [
                 'email' => 'required|email',
                 'name' => 'required|max:255',
-                'text' => 'required|max:10',
+                'text' => 'required|max:1000|min:5',
                 'captcha' => 'required|captcha',
             ], $messages);
 

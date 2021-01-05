@@ -19,8 +19,6 @@ class CommentsController extends Controller
             'message.min' => 'Количество символов комментария должно быть не менее :min',
             'comment_captcha.required' => 'Поле "Код с картинки" обязательно к заполнению',
             'comment_captcha.captcha' => 'Код с картинки введен неверно',
-            // 'captcha' => 'Код с картинки введен неверно sdfgdfsgdf',
-            // 'comment_captcha' => 'Код с картинки введен неверно',
         ];
 
         if (Auth::check()) {            
@@ -37,7 +35,7 @@ class CommentsController extends Controller
         }
         
 
-        dd($request);
+        //dd($request);
 
         $comment = new Comment();
         $post = new Post();

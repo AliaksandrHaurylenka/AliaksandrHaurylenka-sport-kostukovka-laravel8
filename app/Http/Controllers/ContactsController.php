@@ -10,7 +10,7 @@ use \Mews\Captcha\Captcha;
 class ContactsController extends Controller
 {
     public function index(){
-      //dd(url()->full());
+      //dd(url()->previous());
       $director_sok = Director::where('department', 'Директор СОК')
         ->latest('id')
         ->first();

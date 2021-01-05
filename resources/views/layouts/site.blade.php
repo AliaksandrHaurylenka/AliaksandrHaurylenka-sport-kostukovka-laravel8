@@ -7,7 +7,7 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 ?>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="ru-Ru">
     <head>
         @include('site.blocks.head')
@@ -33,8 +33,6 @@ ini_set('display_startup_errors', 1);
             @include('site.blocks.sections_menu')
         </header>
         <main>
-
-
             <div class="container-fluid grey lighten-4">
                 <div class="container">
                     <div class="pt-3">
@@ -59,7 +57,6 @@ ini_set('display_startup_errors', 1);
 
                 </div>
             </div>
-
         </main>
         @include('site.blocks.footer')
         @include('site.blocks.scripts')

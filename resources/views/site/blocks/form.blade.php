@@ -17,7 +17,7 @@
 					@endif
 			</div>
 		</div>
-		{{-- @include('site.blocks.captcha') --}}
+		
 	  <!-- Default input -->
 	  <div class="form-group">
 			<input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Имя*" name="name" value="{{old('name')}}" required>
