@@ -11,7 +11,7 @@
             
             <!-- Default form login -->
 			    <form action="/subscribe" method="post">
-						{{csrf_field()}}
+						@csrf
 			      <!-- Default input email -->
 			      <label for="defaultFormEmailEx" class="grey-text">Email</label>
 			      <input type="email" name="email" id="defaultFormEmailEx" class="form-control" required>

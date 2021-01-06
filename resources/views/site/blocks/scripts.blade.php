@@ -29,9 +29,9 @@
 
 
 <script>
-
-  // Плавная прокрутка к сообщению при выводе ошибок
   $(document).ready(function(){
+
+    // Плавная прокрутка к сообщению при выводе ошибок
      $(".form").on("click","a", function (event) {
          event.preventDefault();
          var id  = $(this).attr('href'),
@@ -39,11 +39,16 @@
          $('body, html').animate({scrollTop: top}, 1500);
      });
 
+
+    //Флеш сообщения
      $(".flash.message").children('.alert').css({"padding-left": "21%", "padding-right": "22%"});
 
+
+    //Просмотр галереи
      $("a[rel^='prettyPhoto']").prettyPhoto(
         theme="facebook"
      );
+
  });
  </script>
 
