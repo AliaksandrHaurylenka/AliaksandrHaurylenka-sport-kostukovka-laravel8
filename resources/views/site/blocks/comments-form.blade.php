@@ -24,8 +24,12 @@
             <div class="form-row">
                 <div class="col-sm-6">
                     <div class="md-form">
-                        <img src="{{ Captcha::src('flat') }}" alt="comment_captcha" class="captcha-img" data-refresh-config="default">
-                        <a href="" id="refreshh" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a>
+                        <div class="mt-4">
+                            <span class="refereshrecapcha">  
+                            {!! captcha_img('flat') !!}
+                            </span>
+                            <a href="javascript:void(0)" onclick="refreshCaptcha()" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a>
+                        </div> 
                     </div>
                 </div>
 

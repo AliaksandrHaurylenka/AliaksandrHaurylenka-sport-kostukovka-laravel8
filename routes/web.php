@@ -47,7 +47,6 @@ Route::get('/', [MainController::class, 'index'])->name('main');
 Route::get('/uslugi', [ServicesController::class, 'index'])->name('uslugi');
 Route::get('/raspisanie', [TimetablesController::class, 'index'])->name('raspisanie');
 Route::get('/kontakty', [ContactsController::class, 'index'])->name('kontakty');
-Route::get('/refereshcapcha', [ContactsController::class, 'refereshCapcha']);
 Route::get('/kostyukovskie-luzhniki', [HistorysController::class, 'luzhniki'])->name('kostyukovskie-luzhniki');
 Route::get('/doska-pocheta', [HistorysController::class, 'doska'])->name('doska-pocheta');
 Route::get('/oao-gomelsteklo', [HistorysController::class, 'gomelsteklo'])->name('oao-gomelsteklo');
@@ -68,9 +67,7 @@ Route::get('/user_posts/{id}/{name}', [PostsController::class, 'user_posts'])->n
 Route::post('/subscribe', [SubscribesController::class, 'subscribe']);
 Route::get('/verify/{token}', [SubscribesController::class, 'verify'])->name('subscriber.verify');
 Route::post('/letter', [LetterController::class, 'letter']);
-// Route::get('/get_captcha/{config?}', function (\Mews\Captcha\Captcha $captcha, $config = 'default') {
-//     return $captcha->src($config);
-// });
+Route::get('/refereshcapcha', [LetterController::class, 'refereshCapcha']);
 
 
 

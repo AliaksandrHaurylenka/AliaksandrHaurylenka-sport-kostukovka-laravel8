@@ -8,7 +8,7 @@
 			{{ csrf_field() }}
 		<div class="form-row mb-4">
 			<div class="col">
-					<a href="" id="refresh"><img src="{{ Captcha::src('flat') }}" alt="captcha" class="captcha-img" data-refresh-config="default"></a>
+					<a href="javascript:void(0)" onclick="refreshCaptcha()" title="Обновить" class="refereshrecapcha">{!! captcha_img('flat') !!}</a>
 			</div>
 			<div class="col">
 					<input class="form-control {{ $errors->has('captcha') ? ' is-invalid' : '' }}" type="text" placeholder="Код*" name="captcha" required>

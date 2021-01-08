@@ -1,4 +1,3 @@
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 
 
@@ -52,22 +51,7 @@
  });
  </script>
 
-
- {{-- <script>
-    $('#refresh').on('click',function(){
-        var captcha = $('img.captcha-img');
-        var config = captcha.data('refresh-config');
-        $.ajax({
-            method: 'GET',
-            url: '/get_captcha/' + config,
-        }).done(function (response) {
-            captcha.prop('src', response);
-        });
-    });
-</script> --}}
-
-
-{{-- <script>
+<script>
 
 function refreshCaptcha(){
       $.ajax({
@@ -78,9 +62,9 @@ function refreshCaptcha(){
           $('.refereshrecapcha').html(json);
         },
         error: function(data) {
-          alert('Try Again.');
+          alert('Что-то пошло не так!');
         }
       });
     }
 
-</script> --}}
+</script>

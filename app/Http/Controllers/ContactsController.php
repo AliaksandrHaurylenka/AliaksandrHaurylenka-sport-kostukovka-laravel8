@@ -19,9 +19,4 @@ class ContactsController extends Controller
         ->first();
 		return view('site.contacts', compact('director_sok', 'director_sdyshor'));
   }
-  
-  public function refereshCapcha(){
-    return Captcha::img('flat');
-    // return captcha_img('flat');
-  }
 }
