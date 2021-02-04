@@ -25,7 +25,8 @@ trait FileUploadTrait
 
         foreach ($request->all() as $key => $value) {
             if ($request->hasFile($key)) {
-                if ($request->has($key . '_max_width') && $request->has($key . '_max_height')) {
+                // if ($request->has($key . '_max_width') && $request->has($key . '_max_height')) {
+                if ($request->has($key . '_max_width')) {
                     // Check file width
                     $filename = time() . '-' . $request->file($key)->getClientOriginalName();
                     $filename = preg_replace('/\s/', '', $filename);//удаление всех пробелов в имени файла
@@ -36,19 +37,37 @@ trait FileUploadTrait
 //                    }
 //                    Image::make($file)->resize(50, 50)->save($thumbPath . '/' . $filename);
                     $width  = $image->width();
-                    $height = $image->height();
-                    if ($width > $request->{$key . '_max_width'} && $height > $request->{$key . '_max_height'}) {
-                        $image->fit($request->{$key . '_max_width'}, $request->{$key . '_max_height'});
-//                        $image->resize($request->{$key . '_max_width'}, $request->{$key . '_max_height'});
+                    //$height = $image->height();
+                    if ($width > $request->{$key . '_max_width'}) {
+                        //$image->fit($request->{$key . '_max_width'});
+                        $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
                     } elseif ($width > $request->{$key . '_max_width'}) {
                         $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
                             $constraint->aspectRatio();
                         });
-                    } elseif ($height > $request->{$key . '_max_height'}) {
-                        $image->resize(null, $request->{$key . '_max_height'}, function ($constraint) {
-                            $constraint->aspectRatio();
-                        });
                     }
+                    // } elseif ($height > $request->{$key . '_max_height'}) {
+                    //     $image->resize(null, $request->{$key . '_max_height'}, function ($constraint) {
+                    //         $constraint->aspectRatio();
+                    //     });
+                    // }
+
+                    
+                    // $width  = $image->width();
+                    // $height = $image->height();
+                    // if ($width > $request->{$key . '_max_width'} && $height > $request->{$key . '_max_height'}) {
+                    //     $image->fit($request->{$key . '_max_width'}, $request->{$key . '_max_height'});
+                    // } elseif ($width > $request->{$key . '_max_width'}) {
+                    //     $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
+                    //         $constraint->aspectRatio();
+                    //     });
+                    // } elseif ($height > $request->{$key . '_max_height'}) {
+                    //     $image->resize(null, $request->{$key . '_max_height'}, function ($constraint) {
+                    //         $constraint->aspectRatio();
+                    //     });
+                    // }
 
                     $image->save($uploadPath . '/' . $filename);
                     $finalRequest = new Request(array_merge($finalRequest->all(), [$key => $filename]));
