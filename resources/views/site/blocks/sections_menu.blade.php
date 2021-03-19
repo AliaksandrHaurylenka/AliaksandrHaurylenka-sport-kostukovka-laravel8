@@ -18,7 +18,7 @@
                 <div class="view overlay" onclick="window.location='{{ route('section', [$section->id, $section->slug]) }}'">
                   <img class="card-img-top"
                        src="/images/sections/{{$section->photo_section_menu}}"
-                       style="max-width: 140px" alt="">
+                       style="max-width: 140px; display: block; margin: 0 auto" alt="">
                     <span class="mask rgba-white-slight"></span>
                 </div>
 
