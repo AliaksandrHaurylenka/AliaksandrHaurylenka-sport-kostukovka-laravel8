@@ -16,17 +16,21 @@
               <div class="card mb-4 z-depth-0">
                 <!--Card image-->
                 <div class="view overlay sport_icons" onclick="window.location='{{ route('section', [$section->id, $section->slug]) }}'">
-                  <img class="card-img-top"
-                       src="/images/sections/{{$section->photo_section_menu}}"
-                       style="" alt="">
+                  <div class="sport_icons_border">
+                    <div class="sport_icons_bg">
+                      <img class="card-img-top" src="/images/sections/{{$section->photo_section_menu}}" alt="">
+                    </div>
+                  </div>
+                  
                     <span class="mask rgba-white-slight"></span>
                 </div>
 
                 <!--Card content-->
-                <div class="card-body d-none d-lg-block for-active-button">
+                <div class="card-body d-none d-lg-block for-active-button text-center">
                   <!--Text-->
                   {{-- <p class="card-text">{!! getLengthString($section->description, 50) !!}</p> --}}
-                  <a href="{{ route('section', [$section->id, $section->slug]) }}" class="btn btn-light-blue btn-md text-white">Подробнее</a>
+                  {{-- <h2 class="card-text">{!! $section->title !!}</h2> --}}
+                  <a href="{{ route('section', [$section->id, $section->slug]) }}" class="btn btn-light-blue btn-md text-white">{!! $section->title !!}</a>
                 </div>
               </div>
               <!-- Card -->
