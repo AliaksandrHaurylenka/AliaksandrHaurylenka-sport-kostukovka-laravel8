@@ -28,8 +28,8 @@
                 <!--Card content-->
                 <div class="card-body d-none d-lg-block for-active-button text-center">
                   <!--Text-->
-                  {{-- <p class="card-text">{!! getLengthString($section->description, 50) !!}</p> --}}
-                  {{-- <h2 class="card-text">{!! $section->title !!}</h2> --}}
+                  {{-- <p class="card-text">{!! getLengthString($section->description, 50) !!}</p>
+                  <h2 class="card-text">{!! $section->title !!}</h2> --}}
                   <a href="{{ route('section', [$section->id, $section->slug]) }}" class="btn btn-light-blue btn-md text-white">{!! $section->title !!}</a>
                 </div>
               </div>
