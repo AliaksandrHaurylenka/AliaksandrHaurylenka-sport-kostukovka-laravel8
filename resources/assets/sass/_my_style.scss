@@ -57,32 +57,33 @@ ol {
   }	
 }
 
+
 @media (max-width: 991px) {
   .sport_icons {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     &_border {
-      width: 92px;
-      height: 92px;
+      width: 82px;
+      height: 82px;
     }
     &_bg {
-      width: 88px;
-      height: 88px;
+      width: 78px;
+      height: 78px;
     }
   }
 }
 
 @media (max-width: 767px) {
   .sport_icons {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     &_border {
-      width: 74px;
-      height: 74px;
+      width: 52px;
+      height: 52px;
     }
     &_bg {
-      width: 70px;
-      height: 70px;
+      width: 46px;
+      height: 46px;
     }
   }
 }

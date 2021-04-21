@@ -7,12 +7,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      
       <div class="d-none d-sm-block">
-				<div class="sections-icons d-flex justify-content-center">
-
+				<div class="sections-icons row">
 					@if(isset($sportSections))
             @foreach($sportSections as $section)
-              <div class="">
+              <div class="col">
                 <div class="view overlay sport_icons btn-light-blue" onclick="window.location='{{ route('section', [$section->id, $section->slug]) }}'">
                   <div class="sport_icons_border">
                     <div class="sport_icons_bg btn-light-blue">
@@ -25,7 +25,6 @@
               </div>
             @endforeach
           @endif
-
 				</div>
 
 				

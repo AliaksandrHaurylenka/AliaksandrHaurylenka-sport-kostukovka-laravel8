@@ -1,5 +1,5 @@
 <!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade main-carousel" data-ride="carousel">
+<div id="carousel-example-1z" class="carousel slide carousel-fade main-carousel d-none d-sm-block" data-ride="carousel">
 
     @if(isset($slides))
         <!--Indicators-->
