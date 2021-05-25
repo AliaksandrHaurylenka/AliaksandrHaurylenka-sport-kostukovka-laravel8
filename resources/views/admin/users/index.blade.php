@@ -53,12 +53,12 @@
                                 <td field-key='description'>{!! $user->description !!}</td>
                                 <td field-key='email'>{{ $user->email }}</td>
                                 <td field-key='role'>{{ $user->role->title ?? '' }}</td>
-                                <td>
+                                                                <td>
                                     @can('user_view')
-                                        <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                                    <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('user_edit')
-                                        <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('user_delete')
 {!! Form::open(array(

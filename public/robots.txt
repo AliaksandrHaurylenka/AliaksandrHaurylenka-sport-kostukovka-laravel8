@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Sitemap: http://sport-kostukovka.by/sitemap.xml
+Host: sport-kostukovka.by

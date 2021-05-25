@@ -15,59 +15,29 @@ trait FileUploadTrait
     {
 
 		$uploadPath = public_path(env('UPLOAD_PATH').$path);
-//		$thumbPath = public_path(env('UPLOAD_PATH').'/thumb');
         if (! file_exists($uploadPath)) {
             mkdir($uploadPath, 0775);
-//            mkdir($thumbPath, 0775);
         }
 
         $finalRequest = $request;
 
         foreach ($request->all() as $key => $value) {
             if ($request->hasFile($key)) {
-                // if ($request->has($key . '_max_width') && $request->has($key . '_max_height')) {
+                
                 if ($request->has($key . '_max_width')) {
                     // Check file width
                     $filename = time() . '-' . $request->file($key)->getClientOriginalName();
                     $filename = preg_replace('/\s/', '', $filename);//удаление всех пробелов в имени файла
                     $file     = $request->file($key);
                     $image    = Image::make($file);
-//                    if (! file_exists($thumbPath)) {
-//                        mkdir($thumbPath, 0775, true);
-//                    }
-//                    Image::make($file)->resize(50, 50)->save($thumbPath . '/' . $filename);
+
                     $width  = $image->width();
-                    //$height = $image->height();
                     if ($width > $request->{$key . '_max_width'}) {
-                        //$image->fit($request->{$key . '_max_width'});
-                        $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
-                            $constraint->aspectRatio();
-                        });
-                    } elseif ($width > $request->{$key . '_max_width'}) {
                         $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
                             $constraint->aspectRatio();
                         });
                     }
-                    // } elseif ($height > $request->{$key . '_max_height'}) {
-                    //     $image->resize(null, $request->{$key . '_max_height'}, function ($constraint) {
-                    //         $constraint->aspectRatio();
-                    //     });
-                    // }
-
                     
-                    // $width  = $image->width();
-                    // $height = $image->height();
-                    // if ($width > $request->{$key . '_max_width'} && $height > $request->{$key . '_max_height'}) {
-                    //     $image->fit($request->{$key . '_max_width'}, $request->{$key . '_max_height'});
-                    // } elseif ($width > $request->{$key . '_max_width'}) {
-                    //     $image->resize($request->{$key . '_max_width'}, null, function ($constraint) {
-                    //         $constraint->aspectRatio();
-                    //     });
-                    // } elseif ($height > $request->{$key . '_max_height'}) {
-                    //     $image->resize(null, $request->{$key . '_max_height'}, function ($constraint) {
-                    //         $constraint->aspectRatio();
-                    //     });
-                    // }
 
                     $image->save($uploadPath . '/' . $filename);
                     $finalRequest = new Request(array_merge($finalRequest->all(), [$key => $filename]));

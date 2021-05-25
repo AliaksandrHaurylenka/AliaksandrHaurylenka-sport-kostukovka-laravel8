@@ -20,7 +20,7 @@ class PostsController extends Controller
             ->latest('date')
             ->latest('id')
             ->paginate(3)
-            ->onEachSide(2);
+            ->onEachSide(0);
         $allPosts = DB::table('posts')->where('status', 1)->get();
 
 
@@ -35,7 +35,6 @@ class PostsController extends Controller
     public function post($slug)
     {
         $post = Post::where('status', Post::IS_PUBLIC)->where('slug', $slug)->firstOrFail();
-        //dd(url()->full());
 
         event('postHasViewed', $post);//для подсчета количества просмотров постов. Провайдер EventServiceProvider.php
 

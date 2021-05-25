@@ -1,3 +1,4 @@
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 
 
@@ -50,8 +51,9 @@
 
  });
  </script>
-
-<script>
+ 
+ 
+ <script>
 
 function refreshCaptcha(){
       $.ajax({
@@ -67,4 +69,21 @@ function refreshCaptcha(){
       });
     }
 
+</script>
+
+
+<script>
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
 </script>

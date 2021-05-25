@@ -17,6 +17,12 @@
 
 <link rel="icon" href="../../favicon.ico">
 
+{!! htmlScriptTagJsApi([
+	'action' => 'homepage',
+	'callback_then' => 'callbackThen',
+	'callback_catch' => 'callbackCatch'
+]) !!}
+
 <style>
 
     html,

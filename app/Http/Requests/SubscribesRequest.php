@@ -25,6 +25,7 @@ class SubscribesRequest extends FormRequest
     {
         return [
             'email' => 'required|email|unique:subscribes',
+            'captcha' => 'required'
         ];
     }
 }

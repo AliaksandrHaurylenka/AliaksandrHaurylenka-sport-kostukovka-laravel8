@@ -20,9 +20,39 @@ class SubscribesController extends Controller
 
     public function subscribe(SubscribesRequest $request)
     {
-        $this->service->register($request);
+        if ($request->isMethod('post')) {
+            if($request->has('politica')){
+                $messages = [
+                    'email.required' => 'Поле "E-mail" обязательно к заполнению',
+                    'captcha' => 'Код с картинки введен неверно',
+                ];
+    
+                $this->validate($request, [
+                    'email' => 'required|email',
+                    'captcha' => 'required|captcha',
+                ], $messages);
+                
+                $this->service->register($request);
+                
+                flash('Для подтверждения рассылок, пожалуйста, перейдите в свою почту!')->success()->important();
+            }else{
+                flash('Необходимо согласиться с политикой конфидиальности!')->error()->important();
+            }
+            
+            // $messages = [
+            //     'email.required' => 'Поле "E-mail" обязательно к заполнению',
+            //     'captcha' => 'Код с картинки введен неверно',
+            // ];
 
-        flash('Для подтверждения рассылок, пожалуйста, перейдите в свою почту!')->success()->important();
+            // $this->validate($request, [
+            //     'email' => 'required|email',
+            //     'captcha' => 'required|captcha',
+            // ], $messages);
+            
+            // $this->service->register($request);
+        }
+
+        // flash('Для подтверждения рассылок, пожалуйста, перейдите в свою почту!')->success()->important();
         return redirect()->back();
     }
 

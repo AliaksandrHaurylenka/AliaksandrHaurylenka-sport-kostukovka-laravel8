@@ -7,7 +7,7 @@
           <h3 class="mt-2"><i class="fas fa-envelope"></i> Напишите нам:</h3>
         </div>
         <!-- Body -->
-        <form action="/letter" method="post">
+        <form action="/letter" method="post" class="g-3 needs-validation" novalidate>
           {{ csrf_field() }}
           <div class="form-row">
             <div class="col-sm-6">
@@ -58,7 +58,23 @@
           </div>
           
           <div class="text-center">
-            <button type="submit" class="btn btn-light-blue btn-form">Отправить</button>
+            <div class="policy">
+                <input
+    				class="form-check-input checkbox__policy"
+    				type="checkbox"
+    				value=""
+    				id="invalidCheck"
+    				required
+    				name="politica"
+    				onchange="formSend()"
+			    />
+                <label class="form-check-label" for="invalidCheck">
+					Я согласен(а) с
+				</label>
+				<a href="{{ route('policy') }}">политикой конфидиальности</a>
+				<div class="invalid-feedback">Необходимо согласиться с политикой конфидиальности!</div>
+            </div>
+            <button type="submit" class="btn btn-light-blue btn-form mt-3">Отправить</button>
           </div>
         </form>
       </div>

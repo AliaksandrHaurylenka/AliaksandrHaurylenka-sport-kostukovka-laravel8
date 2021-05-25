@@ -66,18 +66,20 @@ class AppServiceProvider extends ServiceProvider
 
          view()->composer('site.blocks.sidebar.archive', function ($view){
             $view->with('yearArchive', Post::archivesYears());
+//            $view->with('monthYearArchive', Post::archivesMonthYear('2020'));
         });
 
          view()->composer('site.blocks.sidebar.banners', function ($view){
             $view->with('banners', Banner::all());
         });
 
-        view()->composer('site.modal-ads', function ($view){
+         view()->composer('site.modal-ads', function ($view){
             $view->with('ads', Ad::where('status', 1)
                 						->orderBy('date', 'desc')
                 						->orderBy('id', 'desc')
                 						->get()
             						);
         });
+
     }
 }

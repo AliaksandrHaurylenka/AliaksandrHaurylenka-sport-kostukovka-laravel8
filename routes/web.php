@@ -10,6 +10,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TimetablesController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\HistorysController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SectionsPagesController;
@@ -69,7 +70,7 @@ Route::get('/verify/{token}', [SubscribesController::class, 'verify'])->name('su
 Route::post('/letter', [LetterController::class, 'letter']);
 Route::get('/refereshcapcha', [LetterController::class, 'refereshCapcha']);
 
-
+Route::get('/policy', [PolicyController::class, 'index'])->name('policy');
 
 Route::group([
     'middleware' => 'auth',

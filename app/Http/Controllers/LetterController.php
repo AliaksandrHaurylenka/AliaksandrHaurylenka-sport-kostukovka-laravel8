@@ -41,8 +41,8 @@ class LetterController extends Controller
             return redirect()->back();
         }
     }
-
-
+    
+    
     public function refereshCapcha()
     {
         return captcha_img('flat');

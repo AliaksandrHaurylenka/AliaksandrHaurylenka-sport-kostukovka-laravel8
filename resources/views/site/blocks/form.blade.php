@@ -5,7 +5,7 @@
 
 	<!-- Default form group -->
 	<form action="/letter" method="post">
-			{{ csrf_field() }}
+		@csrf
 		<div class="form-row mb-4">
 			<div class="col">
 					<a href="javascript:void(0)" onclick="refreshCaptcha()" title="Обновить" class="refereshrecapcha">{!! captcha_img('flat') !!}</a>
@@ -17,7 +17,6 @@
 					@endif
 			</div>
 		</div>
-		
 	  <!-- Default input -->
 	  <div class="form-group">
 			<input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Имя*" name="name" value="{{old('name')}}" required>

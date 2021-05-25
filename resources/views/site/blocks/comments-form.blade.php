@@ -29,7 +29,7 @@
                             {!! captcha_img('flat') !!}
                             </span>
                             <a href="javascript:void(0)" onclick="refreshCaptcha()" title="Обновить"><i class="fas fa-sync-alt ml-1 btn-form"></i></a>
-                        </div> 
+                        </div>
                     </div>
                 </div>
 

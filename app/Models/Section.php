@@ -52,7 +52,8 @@ class Section extends Model
     public function pride() {
         return $this->hasMany(Pride::class);
     }
-
+    
+    
     public function getImageAdminPanel()
     {   
         if($this->photo != null){

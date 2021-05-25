@@ -28,7 +28,7 @@
                     {!! Form::file('photo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
                     {!! Form::hidden('photo_max_size', 2) !!}
                     {!! Form::hidden('photo_max_width', 800) !!}
-                    {{-- {!! Form::hidden('photo_max_height', 450) !!} --}}
+                    {!! Form::hidden('photo_max_height', 450) !!}
                     <p class="help-block"></p>
                     @if($errors->has('photo'))
                         <p class="help-block">

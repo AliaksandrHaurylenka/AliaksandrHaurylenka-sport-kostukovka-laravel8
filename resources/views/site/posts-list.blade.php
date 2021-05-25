@@ -52,6 +52,7 @@
                 <span class="badge teal badge-pill font-small ml-2">{{ $allPosts->count() }}</span>
             @elseif($archive_month_year)
                 {{ mb_convert_case($m, MB_CASE_TITLE, "UTF-8").' '.$y }} г.
+{{--                <span class="badge teal badge-pill font-small ml-2">{{ $archive_month_year->count() }}</span>--}}
             @else
                 Без категории
                 <span class="badge teal badge-pill font-small ml-2">{{ $allPosts->count() }}</span>
@@ -72,7 +73,6 @@
         @elseif($y)
             <ul class="nav justify-content-center grey lighten-4">
                 @foreach (App\Models\Post::archivesMonthYear($y) as $month)
-                {{-- @foreach ($y->archivesMonthYear($y) as $month) --}}
                     <li class="nav-item d-flex justify-content-between align-items-center">
                         <u>
                             <a class="nav-link grey-text" href="{{ route('archive.month.year.show', [$month->month, $month->year]) }}">{{ $month->monthRU . ' ' . $month->year }}</a>

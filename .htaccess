@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ public/$1 [L]
+
+#php_value auto_prepend_file "/home/a0196439/domains/sport-kostukovka.by/public_html/public/optipic-cdn-php/optipic-cdn-php/auto_prepend_file.php"
+php_value memory_limit 2G

@@ -29,7 +29,7 @@ class ProfileController extends Controller
             'avatar' => 'nullable|image',
         ]);
         $user = Auth::user();
-        $user->removeImg();
+        $user->removeAvatar();
         $user->edit($request->all());
         $user->generatePassword($request->get('password'));
         $user->uploadAvatar($request->file('avatar'));

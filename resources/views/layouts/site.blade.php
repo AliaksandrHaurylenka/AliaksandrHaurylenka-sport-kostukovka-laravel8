@@ -12,7 +12,7 @@ ini_set('display_startup_errors', 1);
     <head>
         @include('site.blocks.head')
     </head>
-
+    
     <body class="postpage-v4">
         @include('site.blocks.address-top')
         @include('site.modal-ads')
@@ -23,13 +23,13 @@ ini_set('display_startup_errors', 1);
             <div class="flash">
                 @include('admin.errors')
             </div>
-
+        
             @include('site.blocks.nav')
-
+        
             @if(url()->full() == route('main'))
                 @include('site.blocks.carousel')
             @endif
-
+        
             @include('site.blocks.sections_menu')
         </header>
         <main>
@@ -38,8 +38,8 @@ ini_set('display_startup_errors', 1);
                     <div class="pt-3">
                         @yield('breadcrumbs')
                     </div>
-
-
+        
+        
                     <!--Blog-->
                     <div class="row">
                         <!--Main listing-->
@@ -47,18 +47,19 @@ ini_set('display_startup_errors', 1);
                             @yield('content')
                         </div>
                         <!--Main listing-->
-
+        
                         <!--Sidebar-->
                         <div class="col-md-4 col-12">
                             @include('site.blocks.sidebar.sidebar')
                         </div>
                         <!--Sidebar-->
                     </div>
-
+        
                 </div>
             </div>
         </main>
         @include('site.blocks.footer')
         @include('site.blocks.scripts')
+        <script async defer src="https://cdn.leadplan.ru/loader.js?sk=3889ec873576e49d609b9283519fd5a6"></script>
     </body>
 </html>

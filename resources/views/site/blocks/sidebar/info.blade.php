@@ -9,8 +9,8 @@
         <strong>ИНФОРМАЦИЯ</strong>
       </h6>
 
-      <a href="http://gomel.gov.by" target="_blank">
-        <img src="{{asset('images/banners/vibory.jpg')}}" class="img-fluid mb-3 hoverable" alt="">
+      <a href="https://russian.rt.com/ussr/news/819218-belorussiya-god-narodnoe-edinstvo-lukashenko" target="_blank">
+        <img src="{{asset('images/banners/i.jpg')}}" class="img-fluid mb-3 hoverable" alt="">
       </a>
 
     </div>

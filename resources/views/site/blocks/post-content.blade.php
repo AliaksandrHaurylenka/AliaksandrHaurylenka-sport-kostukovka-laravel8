@@ -21,8 +21,6 @@
 
     {!!$post->content!!}
 
-    @include('site.blocks.horizontal-widget-1')
-
     @if($post->getImgGallery("/images/news/$post->folder"))
         <!--Grid row-->
             <div class="gallery">

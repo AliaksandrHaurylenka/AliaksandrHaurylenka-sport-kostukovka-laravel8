@@ -30,6 +30,10 @@ ol {
   }
 }
 
+.policy {
+  font-size: .8rem;
+}
+
 
 .sport_icons {
   @include sport_icons;
@@ -56,6 +60,11 @@ ol {
     max-width: 70%;
   }	
 }
+
+.checkbox__policy {
+  margin-top: 0.2rem;
+}
+
 
 
 @media (max-width: 991px) {
@@ -85,5 +94,9 @@ ol {
       width: 46px;
       height: 46px;
     }
+  }
+
+  .footer-menu {
+    font-size: 1rem;
   }
 }

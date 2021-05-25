@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Director;
 
-use \Mews\Captcha\Captcha;
-
 
 class ContactsController extends Controller
 {
-    public function index(){
-      //dd(url()->previous());
+    function index(){
       $director_sok = Director::where('department', 'Директор СОК')
         ->latest('id')
         ->first();
@@ -18,5 +15,5 @@ class ContactsController extends Controller
         ->latest('id')
         ->first();
 		return view('site.contacts', compact('director_sok', 'director_sdyshor'));
-  }
+	}
 }

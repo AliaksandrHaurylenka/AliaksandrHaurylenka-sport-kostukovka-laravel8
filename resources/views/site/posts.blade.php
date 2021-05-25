@@ -113,6 +113,5 @@
     <!--Pagination dark grey-->
 
     @include('site.blocks.block-rtb-1')
-    @include('site.blocks.horizontal-widget-1')
 
 @endsection

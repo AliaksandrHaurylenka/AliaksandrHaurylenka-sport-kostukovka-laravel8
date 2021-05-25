@@ -18,12 +18,6 @@
       @include('site.blocks.footer.footer-sections-menu')
       {{--/Спортивные секции--}}
 
-      {{--Обратная связь--}}
-      @if(url()->full() != route('kontakty') && !strpos(url()->full(), '/post' ))
-        @include('site.blocks.form')
-      @endif
-      {{--/Обратная связь--}}
-
     </div>
     <!-- Grid row -->
 
