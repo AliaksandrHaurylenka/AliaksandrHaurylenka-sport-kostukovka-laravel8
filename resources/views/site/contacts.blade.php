@@ -121,7 +121,9 @@
     </div>
   </section>
 
-  @include('site.blocks.contact-form')
+  {{-- @include('site.blocks.contact-form') --}}
+  {{-- @include('site.blocks.feedback') --}}
+  @include('site.blocks.feedback1')
 
 
   

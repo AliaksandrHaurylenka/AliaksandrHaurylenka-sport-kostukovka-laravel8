@@ -5,12 +5,14 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 
 <!-- Bootstrap core CSS -->
 <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
 <link href="/css/mdb.min.css" rel="stylesheet">
+{{-- <link href="/feedback/css/style.css" rel="stylesheet"> --}}
 
 <meta name="description" content="@yield('description')">
 <meta name="author" content="Александр Гавриленко">

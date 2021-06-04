@@ -87,3 +87,28 @@ function refreshCaptcha(){
     }, false);
   });
 </script>
+
+
+{{-- <script src="/feedback/vendors/jquery/jquery-3.4.1.min.js"></script> --}}
+<script src="/feedback/js/process-forms.js"></script>
+<script>
+    //после загрузки DOM
+    $(function () {
+        /*
+        Параметры указываются в виде:
+        {
+        ключ: значение;
+        ключ: значение;
+        ...
+        }
+        Основные параметры
+        selector - селектор формы (по умолчанию '#feedback-form')
+        attachmentsMaxFileSize - максимальный размер файла в Кбайтах (по умолчанию 512)
+        attachmentsFileExt - допустимые расширения файлов для загрузки (по умолчанию 'jpg','jpeg','bmp','gif','png')
+        isUseDefaultSuccessMessage - отображать дефолтное сообщение после отправки
+        */
+        var form1 = new ProcessForm();
+        form1.init();
+
+    });
+</script>
