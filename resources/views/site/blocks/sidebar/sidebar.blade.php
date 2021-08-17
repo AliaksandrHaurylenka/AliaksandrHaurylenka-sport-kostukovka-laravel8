@@ -1,4 +1,5 @@
 @include('site.blocks.sidebar.info')
+@include('site.blocks.sidebar.referral-link')
 @if(url()->full() != route('kontakty') && !strpos(url()->full(), '/post' ))
     @include('site.blocks.sidebar.subscribes-form')
 @endif
