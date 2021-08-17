@@ -1,5 +1,5 @@
 <div class="primary-color-dark">
-  <div class="container">
+  <div class="container address">
     <div class="row text-white py-2">
       <div class="col-sm-4"><i class="far fa-clock fa-lg mr-1"></i>
         Время работы: {{Config::get('myconfig.time_work')}}

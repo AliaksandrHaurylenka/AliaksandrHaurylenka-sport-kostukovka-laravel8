@@ -1,5 +1,5 @@
 require('./bootstrap');
-// require('../../../node_modules/prettyphoto/js/jquery-1.8.3.min');
+require('../../../node_modules/prettyphoto/js/jquery-1.8.3.min');
 require('../../../node_modules/prettyPhoto_compressed_3.1.6/js/jquery.prettyPhoto');
 require('./popper.min');
 require('../../../node_modules/flexslider/jquery.flexslider');

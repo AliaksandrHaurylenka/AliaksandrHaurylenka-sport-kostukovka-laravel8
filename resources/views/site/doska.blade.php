@@ -21,7 +21,7 @@
     @if(isset($director_sok))
       @foreach($director_sok as $sok)
         <!-- Card -->
-        <div class="card col-md-4 text-center mb-3">
+        <div class="card col-lg-4 text-center mb-3">
         {!! Html::image(App\Models\Director::PATH.$sok->photo,'',['class'=>'card-img-top']) !!}
         <!-- Card content -->
           <div class="card-body">
@@ -43,7 +43,7 @@
     @if(isset($director_sdyshor))
       @foreach($director_sdyshor as $sok)
         <!-- Card -->
-          <div class="card col-md-4 text-center mb-3">
+          <div class="card col-lg-4 text-center mb-3">
           {!! Html::image(App\Models\Director::PATH.$sok->photo,'',['class'=>'card-img-top']) !!}
           <!-- Card content -->
             <div class="card-body">
@@ -78,17 +78,17 @@
           <div class="card-body row example-1 square scrollbar-cyan bordered-cyan">
             @if(isset($boards))
               @foreach($boards as $coach)
-                <div class="col-md-6 mb-3">
+                <div class="col-lg-6 mb-2">
                   <div class="row">
-                    <div class="col-md-5 view overlay">
+                    <div class="col-sm-4 view overlay">
                       {!! Html::image(App\Models\Board::PATH.$coach->photo,'',['class'=>'img-fluid']) !!}
                       <a href="/images/board/{{$coach->photo}}" rel="prettyPhoto[board]">
                         <div class="mask rgba-white-slight"></div>
                       </a>
-                      <h6 class="h6-responsive mb-1 text-center text-uppercase mt-1">{{$coach->name}}</h6>
+                      <h6 class="h6-responsive text-center text-uppercase mt-1">{{$coach->name}}</h6>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-sm-8">
                       {!!$coach->description!!}
                     </div>
                   </div>

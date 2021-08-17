@@ -1,113 +1,128 @@
 @mixin sport_icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
 }
 
 ol {
-  &.breadcrumb {
-    background-color: #f5f5f5 !important;
-    padding: .75rem 0 0;
-    margin-bottom: 0;
-    a {
-      color: #0d47a1;
-      &:hover{
-        color: #6c757d;
-      }
-    }  
-  }     
+	&.breadcrumb {
+		background-color: #f5f5f5 !important;
+		padding: .75rem 0 0;
+		margin-bottom: 0;
+		a {
+		color: #0d47a1;
+		&:hover{
+			color: #6c757d;
+		}
+		}  
+	}     
 }
 
 .flash .alert {
-  margin-bottom: 0;
-  a {
-    color: #0d47a1;
-    text-decoration: underline;
-    &:hover {
-      color: #4285F4;
-    }
-  }
+	margin-bottom: 0;
+	a {
+		color: #0d47a1;
+		text-decoration: underline;
+		&:hover {
+		color: #4285F4;
+		}
+	}
 }
-
-// .policy {
-//   font-size: .8rem;
-// }
 
 
 .sport_icons {
-  @include sport_icons;
-	width: 130px;
-	height: 130px;
-  background-color: #eee;
-  margin: 0 auto;
+	@include sport_icons;
+		width: 130px;
+		height: 130px;
+	background-color: #eee;
+	margin: 0 auto;
 
-  &_border {
-    @include sport_icons;
-    width: 120px;
-	  height: 120px;
-    background-color: #fff;
-  }
+	&_border {
+		@include sport_icons;
+		width: 120px;
+		height: 120px;
+		background-color: #fff;
+	}
 
-  &_bg {
-    @include sport_icons;
-    width: 116px;
-	  height: 116px;
-    background-color: #eee;
-  }
+	&_bg {
+		@include sport_icons;
+		width: 116px;
+		height: 116px;
+		background-color: #eee;
+	}
 
-	img {
-    max-width: 70%;
-  }	
+		img {
+		max-width: 70%;
+	}	
 }
-
-// .checkbox__policy {
-//   margin-top: 0.2rem;
-// }
 
 /* Стили для сообщения об успешной отправки */
 .form-result-success {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  background: rgba(0, 0, 0, .6);
-  font-size: 1.25rem;
-  border-radius: 4px;
-  > div {
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid #eff4f1;
-    z-index: 1001;
-    border-radius: 0;
-    color: #28a745;
-    background-color: #eff4f1;
-  }
-  a {
-    color: #28a745;
-    background-color: transparent;
-    font-weight: 700;
-  }
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background: rgba(0, 0, 0, .6);
+	font-size: 1.25rem;
+	border-radius: 4px;
+	> div {
+		position: relative;
+		padding: .75rem 1.25rem;
+		margin-bottom: 1rem;
+		border: 1px solid #eff4f1;
+		z-index: 1001;
+		border-radius: 0;
+		color: #28a745;
+		background-color: #eff4f1;
+	}
+	a {
+		color: #28a745;
+		background-color: transparent;
+		font-weight: 700;
+	}
 }
 
 
 /* Стили для сообщения об ошибках */
 .form-error {
-  position: relative;
-  padding: .5rem 1rem 0.6rem;
-  margin-bottom: 1rem;
-  border-radius: .25rem;
-  color: #dc3545;
-  background-color: #dc35450d;
-  border: 1px solid #dc3545;
+	position: relative;
+	padding: .5rem 1rem 0.6rem;
+	margin-bottom: 1rem;
+	border-radius: .25rem;
+	color: #dc3545;
+	background-color: #dc35450d;
+	border: 1px solid #dc3545;
+}
+
+
+.division {
+	display: grid;
+	grid-template-columns: 300px auto;
+	grid-template-rows: 180px auto;
+	column-gap: 20px;
+	background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px -3px 5px rgb(177, 176, 176);
+	&__photo {
+		grid-row: 1/3;
+		img {
+		object-fit: cover;
+		}
+	}
+	&__contacts {
+		h4 {
+		font-weight: bold;
+		}
+	}
 }
 
 
@@ -115,35 +130,64 @@ ol {
 
 
 @media (max-width: 991px) {
-  .sport_icons {
-    width: 90px;
-    height: 90px;
-    &_border {
-      width: 82px;
-      height: 82px;
-    }
-    &_bg {
-      width: 78px;
-      height: 78px;
-    }
-  }
+	.sport_icons {
+		width: 90px;
+		height: 90px;
+		&_border {
+		width: 82px;
+		height: 82px;
+		}
+		&_bg {
+		width: 78px;
+		height: 78px;
+		}
+	}
+
+	.division {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto);
+		&__photo {
+			grid-row: 2/3;
+		}
+		hr {
+			display: none;
+		}
+	}
 }
 
 @media (max-width: 767px) {
-  .sport_icons {
-    width: 60px;
-    height: 60px;
-    &_border {
-      width: 52px;
-      height: 52px;
-    }
-    &_bg {
-      width: 46px;
-      height: 46px;
-    }
-  }
+	.sport_icons {
+		width: 60px;
+		height: 60px;
+		&_border {
+		width: 52px;
+		height: 52px;
+		}
+		&_bg {
+		width: 46px;
+		height: 46px;
+		}
+	}
 
-  .footer-menu {
-    font-size: 1rem;
-  }
+	.footer-menu {
+		font-size: 1rem;
+	}
+
+	.feedback {
+		margin: 0 !important;
+	}
+}
+
+@media (max-width: 575px) {
+	.container{
+		padding-right: 0;
+    	padding-left: 0;
+	}
+	.address {
+		padding-right: 15px;
+    	padding-left: 15px;
+	}
+	.form-captcha__input {
+		margin-top: 1.2rem;
+	}
 }

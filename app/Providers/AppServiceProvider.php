@@ -39,7 +39,12 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Paginator::defaultView('pagination::bootstrap-4');
-        //Paginator::defaultView('pagination::semantic-ui');
+        // Paginator::defaultView('pagination::semantic-ui');
+        // Paginator::defaultView('pagination::simple-bootstrap-4');
+        // Paginator::defaultView('pagination::simple-default');
+        // Paginator::defaultView('pagination::default');
+        // Paginator::defaultView('pagination::tailwind');
+        // Paginator::defaultView('pagination::simple-tailwind');
 
 //        Admin panel
          view()->composer('partials.sidebar', function ($view){
